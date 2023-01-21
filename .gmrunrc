@@ -1,0 +1,40 @@
+# gmrun configuration file
+# Set terminal
+Terminal = kitty
+Editor = nvim
+TermExec = ${Terminal} --detach
+
+# History size
+History = 256
+
+# Set window geometry
+Width = 400
+Top = 300
+Left = 100
+
+# Shows last history line selected when invoked
+ShowLast = 1
+
+# Show files starting with '.'
+ShowDotFiles = 0
+
+# URL Handlers
+URL_http = firefox --new-tab %u
+#URL_mailto = 
+#URL_man = 
+#URL_info = 
+#URL_pd = 
+#URL_file = 
+#URL_readme = 
+#URL_sh = 
+
+# Extension handlers
+#EXT:doc,rtf = 
+EXT:txt,cc,cpp,h,java,html,html,epl,tex,latex,js,css,xml,xsl,am,php,css,js,py,rb = ${TermExec} ${Editor} %s
+EXT:mpeg,mpg,avi,mkv,flv,mov,mp4 = ${TermExec} mpv %s
+EXT:mp3,ogg,m4a,wmv,wma = ${TermExec} mpv --no-video %s
+#EXT:ps = 
+EXT:pdf = zathura %s
+
+URL_v = mpv %s
+URL_r = ${TermExec} mpv --no-video %s

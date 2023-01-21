@@ -1,0 +1,50 @@
+# i3 config file (v4)
+
+#   _                 _    
+# o _)     _  _  ._ _|_ o  _
+# | _)    (_ (_) | | |  | (_|
+#                          _|
+
+# keymap import
+include $HOME/.config/i3/keymap.config
+
+#                
+#  _  _ _|_     ._
+# _> (/_ |_ |_| |_)
+#               |
+
+font pango:monospace 12
+exec --no-startup-id nm-applet
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+#                       
+#      o ._   _|  _        _
+# \/\/ | | | (_| (_) \/\/ _>
+#                       
+
+for_window [all] border none
+for_window [all] resize set width 38 ppt
+for_window [title="mpv"] floating enable
+popup_during_fullscreen smart
+gaps inner 15
+gaps outer 30
+gaps top 60
+
+#                        
+#  _ _|_  _. ._ _|_     ._
+# _>  |_ (_| |   |_ |_| |_)
+#                       |
+
+exec pkill lemonbar &&
+exec_always autotiling
+#exec_always oneko -fg "web gray" -bg black
+#exec_always oneko -sakura -position -30 -100
+#exec_always oneko -tomoyo -position +40 -30
+exec_always --no-startup-id ~/Scripts/shell/clock.sh | lemonbar -pdg "135x50+1775+10" -f "Fira Code Regular"-12
+exec_always --no-startup-id ~/Scripts/shell/WMbuttons-new.sh | sh
+exec_always --no-startup-id ~/Scripts/shell/wthr.sh | lemonbar -pdg "200x50+2000+10" -f "Fira Code Regular"-12
+exec_always --no-startup-id ~/Scripts/shell/playr.sh | lemonbar -pdg "800x50+3030+10" -f "Fira Code Regular"-12

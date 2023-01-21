@@ -1,0 +1,34 @@
+background #0A0A0A
+foreground #B8B9B4
+
+color0 #0A0A0A
+color8 #2E2E2C
+color1 #939490
+color9 #989995
+color2 #5E5E5C
+color10 #636361
+color3 #B6B8B3
+color11 #BBBDB8
+color4 #727370
+color12 #777875
+color5 #D1D1CB
+color13 #D6D6D0
+color6 #636361
+color14 #696966
+color7 #AAABA6
+color15 #AFB0AB
+
+window_padding_width 15
+placement_strategy center
+sync_to_monitor no
+repaint_delay 4
+input_delay 2
+background_opacity 0.9
+enable_audio_bell no
+clipboard_control write-clipboard write_primary read-clipboard-ask read-primary-ask
+shell_integration enabled
+
+map ctrl+shift+t scroll_line_down
+map ctrl+shift+n scroll_line_up
+map ctrl+shift+enter clear_terminal scroll active
+map ctrl+shifft+r load_config_file

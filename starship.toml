@@ -1,0 +1,22 @@
+format = '''
+[⯈](bold red)[⯈](bold green)[⯈](bold yellow) [$cmd_duration$directory$character](bold blue) 
+'''
+
+add_newline = false
+
+[cmd_duration]
+min_time = 2
+show_milliseconds = true
+
+[character]
+success_symbol = "[λ](bold blue)"
+error_symbol = "[⍕](bold red)"
+vimcmd_symbol = "[⍫](green)"
+vimcmd_replace_one_symbol = "[⍫](purple)"
+vimcmd_replace_symbol = "[⍫](bold purple)"
+vimcmd_visual_symbol = "[⍫](yellow)"
+
+[sudo]
+style = "bold green"
+symbol = "⍵"
+disabled = false

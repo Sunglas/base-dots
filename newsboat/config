@@ -1,0 +1,65 @@
+#                  
+# ._ _  |  _   _.  _|
+# | (/_ | (_) (_| (_|
+#                  
+reload-time 180
+reload-threads 4
+auto-reload yes
+download-retries 4
+download-timeout 10
+prepopulate-query-feeds yes
+
+#                      
+# |   _     ._ _   _. ._
+# |< (/_ \/ | | | (_| |_)
+#        /            |
+bind-key h quit
+bind-key t down
+bind-key n up
+bind-key t next articlelist
+bind-key n prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key G end
+bind-key g home
+bind-key d pagedown
+bind-key u pageup
+bind-key s open
+bind-key a toggle-article-read
+bind-key k next-unread
+bind-key K prev-unread
+bind-key D pb-download
+bind-key U show-urls
+bind-key x pb-delete
+bind-key T set-tag
+
+#           
+#  _  _  |  _  ._ _
+# (_ (_) | (_) | _>
+#           
+include /usr/share/doc/newsboat/contrib/colorschemes/gruvbox
+#color listnormal white default
+#color listfocus white black standout bold
+#color listnormal_unread blue 
+#color listfocus_unread yellow default bold
+#color info green black bold
+#color article cyan default
+
+#     
+# |\/| o  _  _
+# |  | | _> (_
+#     
+browser linkhandler
+macro , open-in-browser
+macro v set browser "mpv %u"; open-in-browser ; set browser linkhandler
+macro r set browser "mpv --no-video %u"; open-in-browser; set browser linkhandler
+external-url-viewer "urlview"
+highlight feedlist "---.*---" white default bold
+highlight feedlist ".*0/0.." default default invis
+#show-read-feeds no
+#show-read-articles no
+#feed-sort-order unreadarticlecount-asc
+#article-sort-order desc
+confirm-exit no
+notify-program notify-send
+notify-always yes
