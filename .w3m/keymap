@@ -1,0 +1,28 @@
+keymap m MARK
+keymap . NEXT_MARK
+keymap , PREV_MARK
+
+keymap t MOVE_DOWN
+keymap n MOVE_UP
+keymap s MOVE_RIGHT
+
+keymap l SELECT_MENU
+keymap k SEARCH_NEXT
+keymap j TAB_LINK
+
+keymap C-d NEXT_PAGE
+keymap C-u PREV_PAGE
+keymap R RELOAD
+keymap u PEEK_LINK
+
+keymap M-{ TAB_LEFT
+keymap M-} TAB_RIGHT
+keymap C-t NEW_TAB
+keymap C-w CLOSE_TAB
+
+keymap / SEARCH
+keymap K SEARCH_PREV
+keymap O EXTERN
+keymap M-e EDIT_SCREEN
+
+keymap M-/ COMMAND "GOTO https://swag.pw/; NEXT_LINK; NEXT_LINK; NEXT_LINK; GOTO_LINK"
